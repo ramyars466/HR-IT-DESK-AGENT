@@ -1,7 +1,7 @@
 """
 app/main.py
 ===========
-FastAPI Production Server for GoAified HR/IT Helpdesk AI Agent.
+FastAPI Production Server for Enterprise HR/IT Helpdesk AI Agent.
 Endpoints:
 - POST /chat: Process queries through LangGraph, MCP, RAG, and Guardrails.
 - GET /health: Health check reporting status, LLM configuration, and database connectivity.
@@ -21,7 +21,7 @@ from app.mcp_server import AVAILABLE_TOOLS, db
 
 # Initialize FastAPI App
 app = FastAPI(
-    title="GoAified HR/IT Helpdesk AI Agent",
+    title="Enterprise HR/IT Helpdesk AI Agent",
     description=(
         "Production-ready AI Helpdesk Agent built with LangGraph, Google Gemini, "
         "RAG over company policy documents, and PostgreSQL connected via Model Context Protocol (MCP). "
@@ -92,7 +92,7 @@ class HealthResponse(BaseModel):
 @app.get("/", tags=["General"])
 def root():
     return {
-        "service": "GoAified HR/IT Helpdesk Agent",
+        "service": "Enterprise HR/IT Helpdesk Agent",
         "status": "online",
         "documentation": "/docs",
         "health": "/health",

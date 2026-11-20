@@ -1,7 +1,7 @@
 """
 app/rag.py
 ==========
-Vector DB Ingestion & Source-Cited RAG Pipeline for GoAified HR/IT Policies.
+Vector DB Ingestion & Source-Cited RAG Pipeline for Enterprise HR/IT Policies.
 Supports ChromaDB / FAISS with an intelligent local fallback vector index.
 Guarantees source document name and section citations on every response.
 """
@@ -187,7 +187,7 @@ class PolicyKnowledgeBase:
         if llm is not None:
             try:
                 prompt = (
-                    "You are the GoAified HR & IT Helpdesk Agent. Answer the employee's inquiry "
+                    "You are the Enterprise HR & IT Helpdesk Agent. Answer the employee's inquiry "
                     "strictly based on the following verified company policy excerpts. "
                     "Always cite the exact Source Document and Section Title.\n\n"
                     f"Policy Context:\n{context_str}\n\n"
@@ -213,7 +213,7 @@ class PolicyKnowledgeBase:
         top_chunk = ranked[0]["chunk"]
         source_bullets = "\n".join([f"- **{c['source']}** ({c['section']})" for c in citations])
         synthesized = (
-            f"According to the official GoAified Policy documentation:\n\n"
+            f"According to the official Company Policy documentation:\n\n"
             f"{top_chunk.content.strip()}\n\n"
             f"**Verified Policy Citations:**\n{source_bullets}"
         )

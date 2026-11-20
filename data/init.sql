@@ -1,4 +1,4 @@
--- GoAified HR & IT Helpdesk Database Schema
+-- Enterprise HR & IT Helpdesk Database Schema
 -- Compatible with PostgreSQL 13+ (and SQLite for local standalone development)
 
 DROP TABLE IF EXISTS it_tickets;
@@ -36,13 +36,13 @@ CREATE TABLE it_tickets (
 -- Seed Data: Employees
 INSERT INTO employees (employee_id, name, email, role, department, casual_leave_balance, sick_leave_balance, earned_leave_balance, joining_date, manager_name)
 VALUES
-    ('EMP001', 'Rahul Sharma', 'rahul.sharma@goaified.com', 'AI Engineer Intern', 'AI Agent Studio', 8, 7, 12, '2026-06-01', 'Alok Sharma'),
-    ('EMP101', 'Ramya RS', 'ramya.rs@goaified.com', 'AI Engineer', 'AI Engineering', 8, 5, 12, '2026-06-01', 'Alok Sharma'),
-    ('EMP102', 'Arjun Mehta', 'arjun.mehta@goaified.com', 'Product Manager', 'Product', 3, 2, 8, '2025-09-01', 'Vikram Mehta'),
-    ('EMP002', 'Priya Patel', 'priya.patel@goaified.com', 'Senior Full Stack Engineer', 'Platform Engineering', 4, 9, 14, '2025-02-15', 'Vikram Mehta'),
-    ('EMP003', 'Ananya Rao', 'ananya.rao@goaified.com', 'Product Designer', 'Design & UX', 11, 8, 10, '2025-08-01', 'Rohit Sen'),
-    ('EMP004', 'Karan Verma', 'karan.verma@goaified.com', 'DevOps & Cloud Engineer', 'Infrastructure', 6, 6, 8, '2024-11-10', 'Vikram Mehta'),
-    ('EMP005', 'Sneha Kulkarni', 'sneha.kulkarni@goaified.com', 'QA & Automation Engineer', 'AI Agent Studio', 9, 10, 15, '2026-01-05', 'Alok Sharma');
+    ('EMP001', 'Rahul Sharma', 'rahul.sharma@company.com', 'AI Engineer Intern', 'AI Engineering', 8, 7, 12, '2026-06-01', 'Vikram Mehta'),
+    ('EMP101', 'Ramya RS', 'ramya.rs@company.com', 'AI Engineer', 'AI Engineering', 8, 5, 12, '2026-06-01', 'Vikram Mehta'),
+    ('EMP102', 'Arjun Mehta', 'arjun.mehta@company.com', 'Product Manager', 'Product', 3, 2, 8, '2025-09-01', 'Vikram Mehta'),
+    ('EMP002', 'Priya Patel', 'priya.patel@company.com', 'Senior Full Stack Engineer', 'Platform Engineering', 4, 9, 14, '2025-02-15', 'Vikram Mehta'),
+    ('EMP003', 'Ananya Rao', 'ananya.rao@company.com', 'Product Designer', 'Design & UX', 11, 8, 10, '2025-08-01', 'Rohit Sen'),
+    ('EMP004', 'Karan Verma', 'karan.verma@company.com', 'DevOps & Cloud Engineer', 'Infrastructure', 6, 6, 8, '2024-11-10', 'Vikram Mehta'),
+    ('EMP005', 'Sneha Kulkarni', 'sneha.kulkarni@company.com', 'QA & Automation Engineer', 'Quality Engineering', 9, 10, 15, '2026-01-05', 'Vikram Mehta');
 
 -- Seed Data: Sample IT Tickets
 INSERT INTO it_tickets (ticket_id, employee_id, issue_type, description, status, priority, created_at, updated_at)

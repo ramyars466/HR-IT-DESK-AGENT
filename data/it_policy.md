@@ -1,5 +1,5 @@
-# GoAified Information Technology & Security Policy Manual
-**Document ID:** GOA-IT-POL-2026-V1  
+# Enterprise Information Technology & Security Policy Manual
+**Document ID:** ENT-IT-POL-2026-V1  
 **Last Revised:** November 2026  
 **Applicability:** All Employees, Engineers, Interns, and Contractors
 
@@ -8,13 +8,13 @@
 ## Section 1: Enterprise Network, VPN & Remote Access Policy
 
 ### 1.1 Secure VPN Configuration
-All remote team members requiring access to internal staging clusters, development databases, CI/CD runners, and internal web portals must connect through the GoAified Corporate VPN.
+All remote team members requiring access to internal staging clusters, development databases, CI/CD runners, and internal web portals must connect through the Corporate VPN.
 - **Client Protocol:** OpenVPN / WireGuard protocol using client certificates and TOTP multi-factor authentication (MFA).
 - **Setup Procedure:**
-  1. Download the approved VPN Client from `https://software.goaified.internal/vpn`.
-  2. Log in with your corporate Google SSO credentials (`@goaified.com`) to generate your encrypted client configuration profile (`goaified-vpn.ovpn`).
+  1. Download the approved VPN Client from `https://software.company.internal/vpn`.
+  2. Log in with your corporate Google SSO credentials (`@company.com`) to generate your encrypted client configuration profile (`corporate-vpn.ovpn`).
   3. Import the configuration profile into the VPN client.
-  4. Primary Server Gateway: `vpn-gateway.goaified.com:1194` (UDP).
+  4. Primary Server Gateway: `vpn-gateway.company.com:1194` (UDP).
   5. Authenticate with your SSO username and prompt your mobile Authenticator app for 6-digit TOTP verification.
 
 ### 1.2 Troubleshooting Dropped VPN Connections
@@ -25,7 +25,7 @@ If your VPN connection drops unexpectedly, freezes, or fails to authenticate:
    - Windows: Execute `ipconfig /flushdns` in Command Prompt.
    - macOS: Execute `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder`.
    - Linux: Execute `sudo systemd-resolve --flush-caches`.
-4. **Secondary Gateway Fallback:** If the primary gateway is unresponsive, toggle the gateway setting to the backup server: `vpn-backup.goaified.com:1194`.
+4. **Secondary Gateway Fallback:** If the primary gateway is unresponsive, toggle the gateway setting to the backup server: `vpn-backup.company.com:1194`.
 5. **IT Escalation:** If connection errors persist (e.g., `TLS Error: TLS key negotiation failed` or `AUTH_FAILED`), raise an IT Helpdesk ticket with category **"Network & VPN"** and priority **"High"**.
 
 ---
@@ -42,7 +42,7 @@ If your VPN connection drops unexpectedly, freezes, or fails to authenticate:
 ### 2.2 Account Lockout & Reset Procedures
 - Accounts are automatically locked out after **5 consecutive failed authentication attempts** across any corporate service.
 - Standard lockout duration is **30 minutes**, after which the account unlocks automatically.
-- **Immediate Self-Service Password Reset:** Visit `https://id.goaified.internal/reset` and verify identity using SMS OTP + Authenticator push.
+- **Immediate Self-Service Password Reset:** Visit `https://id.company.internal/reset` and verify identity using SMS OTP + Authenticator push.
 - If self-service verification is unavailable, submit an urgent IT ticket or contact the Helpdesk Slack channel (`#it-helpdesk`) to initiate identity verification via manager video confirmation.
 
 ---

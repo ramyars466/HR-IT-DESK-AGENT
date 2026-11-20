@@ -1,5 +1,5 @@
-# GoAified Global Human Resources Policy Manual
-**Document ID:** GOA-HR-POL-2026-V1  
+# Enterprise Human Resources Policy Manual
+**Document ID:** ENT-HR-POL-2026-V1  
 **Last Revised:** November 2026  
 **Applicability:** All Full-Time Employees, Contractors, and Interns
 
@@ -29,7 +29,7 @@ All full-time employees and extended interns are entitled to the following annua
 ## Section 2: Remote Work & Expense Reimbursement Policy
 
 ### 2.1 Remote & Hybrid Work Guidelines
-GoAified operates under a Remote-First / Flexible-Hybrid model. Employees working remotely are required to maintain a secure, ergonomic workspace with reliable high-speed internet and power backup.
+The organization operates under a Remote-First / Flexible-Hybrid model. Employees working remotely are required to maintain a secure, ergonomic workspace with reliable high-speed internet and power backup.
 
 ### 2.2 Expense Reimbursement Categories and Limits
 Employees can claim reimbursements under the following pre-approved categories via the HRMS portal:
@@ -63,8 +63,8 @@ Employees can claim reimbursements under the following pre-approved categories v
 ## Section 4: Code of Conduct, Grievances, and POSH
 
 ### 4.1 Anti-Harassment & POSH Policy
-GoAified maintains zero tolerance for harassment, discrimination, or intimidation. An Internal Complaints Committee (ICC) handles all grievances under the Prevention of Sexual Harassment (POSH) Act with complete confidentiality.
-- Contact for ICC complaints: `posh@goaified.com`
+The company maintains zero tolerance for harassment, discrimination, or intimidation. An Internal Complaints Committee (ICC) handles all grievances under the Prevention of Sexual Harassment (POSH) Act with complete confidentiality.
+- Contact for ICC complaints: `posh@company.com`
 
 ### 4.2 Whistleblower & Grievance Redressal
-Employees may raise workplace concerns or report ethical breaches anonymously through the internal grievance portal or directly email `grievance@goaified.com`. Response SLA is 48 business hours.
+Employees may raise workplace concerns or report ethical breaches anonymously through the internal grievance portal or directly email `grievance@company.com`. Response SLA is 48 business hours.

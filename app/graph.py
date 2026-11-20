@@ -1,7 +1,7 @@
 """
 app/graph.py
 ============
-Stateful LangGraph Agent Workflow for GoAified HR/IT Helpdesk:
+Stateful LangGraph Agent Workflow for Enterprise HR/IT Helpdesk:
 Nodes:
 1. Guardrail Node (Prompt injection defense, PII redaction, topic routing)
 2. RAG Policy Node (Source-cited retrieval across HR & IT policy documents)
@@ -172,7 +172,7 @@ def response_synthesis_node(state: AgentState) -> Dict[str, Any]:
         blocked_msg = (
             f"⚠️ **Request Restricted**\n\n"
             f"{state.get('blocked_reason')}\n\n"
-            f"*GoAified AI Helpdesk is dedicated exclusively to internal HR policies, "
+            f"*This Enterprise AI Helpdesk is dedicated exclusively to internal HR policies, "
             f"employee leave/benefits queries, and IT service desk workflows.*"
         )
         return {

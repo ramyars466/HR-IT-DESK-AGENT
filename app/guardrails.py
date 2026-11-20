@@ -1,7 +1,7 @@
 """
 app/guardrails.py
 =================
-Multi-tier Guardrails Layer for GoAified HR/IT Helpdesk Agent:
+Multi-tier Guardrails Layer for Enterprise HR/IT Helpdesk Agent:
 1. PII Redaction (Aadhaar, PAN, Phone Numbers, Personal Emails).
 2. Prompt Injection & Jailbreak Defense (Strict pattern & semantic analysis).
 3. Topic & Domain Guardrails (Restricts scope strictly to HR & IT domains).
@@ -31,8 +31,8 @@ AADHAAR_REGEX = re.compile(r"\b\d{4}[\s-]?\d{4}[\s-]?\d{4}\b")
 PAN_REGEX = re.compile(r"\b[A-Za-z]{5}\d{4}[A-Za-z]\b")
 # Phone: Indian 10-digit mobile numbers with optional +91, 91, or 0 prefix
 PHONE_REGEX = re.compile(r"\b(?:\+91[\s-]?|91[\s-]?|0)?[6-9]\d{4}[\s-]?\d{5}\b")
-# Personal Email: Any email that does NOT end in corporate domain @goaified.com
-PERSONAL_EMAIL_REGEX = re.compile(r"\b[A-Za-z0-9._%+-]+@(?!goaified\.com)[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b", re.IGNORECASE)
+# Personal Email: Any personal email that does NOT end in corporate domain @company.com
+PERSONAL_EMAIL_REGEX = re.compile(r"\b[A-Za-z0-9._%+-]+@(?!company\.com)[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b", re.IGNORECASE)
 
 
 # --- 2. Prompt Injection & Jailbreak Signatures ---
@@ -156,7 +156,7 @@ def classify_topic(text: str) -> Tuple[str, Optional[str]]:
     it_matches = sum(1 for k in IT_KEYWORDS if k in text_lower)
 
     if hr_matches == 0 and it_matches == 0:
-        return "OFF_TOPIC", "The question does not pertain to GoAified HR policies or IT Helpdesk operations."
+        return "OFF_TOPIC", "The question does not pertain to company HR policies or IT Helpdesk operations."
 
     if hr_matches >= it_matches:
         return "HR_POLICY", None
@@ -198,7 +198,7 @@ def apply_guardrails(query: str, employee_id: Optional[str] = None) -> Guardrail
         logger.warning("Off-topic query blocked: %s", off_topic_reason)
         return GuardrailResult(
             is_safe=False,
-            blocked_reason=f"Request blocked: Out of scope. {off_topic_reason} This helpdesk only assists with GoAified HR policies and IT operations.",
+            blocked_reason=f"Request blocked: Out of scope. {off_topic_reason} This helpdesk only assists with company HR policies and IT operations.",
             redacted_query=redacted_query,
             detected_pii=detected_pii,
             routed_domain="OFF_TOPIC",

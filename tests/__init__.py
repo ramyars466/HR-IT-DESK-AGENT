@@ -1,1 +1,1 @@
-"""Test suite for GoAified HR/IT Helpdesk Agent."""
+"""Test suite for Enterprise HR/IT Helpdesk Agent."""

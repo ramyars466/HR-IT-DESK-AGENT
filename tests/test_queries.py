@@ -1,7 +1,7 @@
 """
 tests/test_queries.py
 =====================
-Automated Verification Suite for GoAified HR/IT Helpdesk Agent:
+Automated Verification Suite for Enterprise HR/IT Helpdesk Agent:
 Executes the mandatory 10 Sample Test Cases:
 - 3 HR/IT Policy RAG Queries (Verifying Source & Section Citations)
 - 3 Employee-specific PostgreSQL MCP Queries (Leave balances, IT ticket creation, Ticket status)
@@ -173,7 +173,7 @@ def run_single_test(test: dict) -> dict:
 def test_all_queries():
     """Pytest entrypoint and CLI runner."""
     print("\n" + "=" * 80)
-    print("🚀 GoAified HR/IT Helpdesk Agent — Automated Test Suite (10 Questions)")
+    print("🚀 Enterprise HR/IT Helpdesk Agent — Automated Test Suite (10 Questions)")
     print("=" * 80)
 
     results = []

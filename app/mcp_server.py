@@ -108,8 +108,8 @@ class DatabaseManager:
         """)
         cursor.execute("""
             INSERT OR IGNORE INTO employees (id, employee_id, name, email, role, department, casual_leave_balance, sick_leave_balance, earned_leave_balance, joining_date, manager_name) VALUES 
-            (1, 'EMP001', 'Rahul Sharma', 'rahul.sharma@goaified.com', 'AI Engineer Intern', 'AI Agent Studio', 8, 7, 12, '2026-06-01', 'Alok Sharma'),
-            (6, 'EMP101', 'Aarav Mehta', 'aarav.mehta@goaified.com', 'Associate AI Engineer', 'AI Agent Studio', 8, 7, 12, '2026-06-01', 'Alok Sharma');
+            (1, 'EMP001', 'Rahul Sharma', 'rahul.sharma@company.com', 'AI Engineer Intern', 'AI Engineering', 8, 7, 12, '2026-06-01', 'Vikram Mehta'),
+            (6, 'EMP101', 'Ramya RS', 'ramya.rs@company.com', 'AI Engineer', 'AI Engineering', 8, 5, 12, '2026-06-01', 'Vikram Mehta');
         """)
 
     def get_connection(self):
